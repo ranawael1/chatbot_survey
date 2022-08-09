@@ -1,1 +1,0 @@
-/home/rana/Desktop/projects/Rasa2.8.16/survey/requirements.txt
