@@ -1,0 +1,251 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- mood_great
+- goodbye
+- affirm
+- greet
+- provide_email
+- provide_name
+- feedback
+- mood_unhappy
+- response_feedback
+- deny
+- bot_challenge
+entities:
+- email
+slots:
+  recommend:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  management:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  strategy:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  development:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  mistakes:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  daily_problems:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  treat:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  satisfied:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  email:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  name:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+responses:
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_greet:
+  - text: |-
+      Hi there! 
+       We are really proud of you for having you as an employee of our team. 
+       To provide you with the best work environment we would like to understand your feedback on effectiveness, direction, team development of the management team.
+       Are you ready to share your experience with us?
+  utter_ask_recommend:
+  - text: |2-
+       Perfect! 
+       Let's begin then 
+       How likely are you to recommend this organization to your family or friends? 
+       
+    buttons:
+    - payload: Very Likely
+      title: Very Likely
+    - payload: Not Sure
+      title: Not Sure
+    - payload: Very Unlikely
+      title: Very Unlikely
+  utter_ask_management:
+  - text: |2-
+       Hmm...interesting to know that. 
+       Does your senior management give you a clear picture of the direction the company is 	headed? 
+       from 1 to 5 (1 means Strongly Disagree, 5 means Strongly Agree) 
+    buttons:
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+  utter_ask_strategy:
+  - text: |-
+      Are you satisfied with the strategic direction of the company? 
+       from 1 to 5 (1 means Strongly Disagree, 5 means Strongly Agree)  
+    buttons:
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+  utter_ask_development:
+  - text: |-
+      Let me ensure you that we are working hard on this.
+       Does your senior management is willing to invest in the development of new team members? 
+       from 1 to 5 (1 means Strongly Disagree, 5 means Strongly Agree)
+    buttons:
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+  utter_ask_mistakes:
+  - text: |-
+      I got your point and noted the same.
+       Does your senior management is willing to accept mistakes made in the process of trying 	new things? 
+       from 1 to 5 (1 means Strongly Disagree, 5 means Strongly Agree)
+    buttons:
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+  utter_ask_daily_problems:
+  - text: |-
+      And do they understand the daily problems you face with the job? 
+       from 1 to 5 (1 means Strongly Disagree, 5 means Strongly Agree)
+    buttons:
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+  utter_ask_treat:
+  - text: |-
+      We are planning to organize weekly sessions where you can share your problems with the 	management. 
+       Isn't that great. 
+       Does senior management treat you with respect? 
+       from 1 to 5 (1 means Strongly Disagree, 5 means Strongly Agree)
+    buttons:
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+  utter_ask_satisfied:
+  - text: Lastly, overall, how satisfied are you with the job being done by your immediate supervisor?
+    buttons:
+    - payload: Very Dissatisfied
+      title: Very Dissatisfied
+    - payload: Somewhat Dissatisfied
+      title: Somewhat Dissatisfied
+    - payload: Undecided
+      title: Undecided
+    - payload: Somewhat Satisfied
+      title: Somewhat Satisfied
+    - payload: Strongly Satisfied
+      title: Strongly Satisfied
+  utter_ask_name:
+  - text: |-
+      Thank you for your response.
+       Please share your full name below?
+  utter_ask_email:
+  - text: |-
+      Once the survey is completed, we will share a full report with you. 
+       Please share your email address below.
+  utter_thanking_for_responsing:
+  - text: |-
+      Really appreciate you quick response.
+       Have a great day ahead. Take care.
+  utter_ask_agree_or_not:
+  - text: from 1 to 5 (1 means Strongly Disagree, 5 means Strongly Agree)
+    buttons:
+    - payload: '1'
+      title: '1'
+    - payload: '2'
+      title: '2'
+    - payload: '3'
+      title: '3'
+    - payload: '4'
+      title: '4'
+    - payload: '5'
+      title: '5'
+actions:
+- utter_ask_agree_or_not
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_thanking_for_responsing
+- validate_survey
+forms:
+  survey:
+    required_slots:
+      recommend:
+      - type: from_text
+      management:
+      - type: from_text
+      strategy:
+      - type: from_text
+      development:
+      - type: from_text
+      mistakes:
+      - type: from_text
+      daily_problems:
+      - type: from_text
+      treat:
+      - type: from_text
+      satisfied:
+      - type: from_text
+      name:
+      - type: from_text
+      email:
+      - type: from_entity
+        entity: email
