@@ -6,7 +6,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: feedback
+  - intent: affirm
   - action: survey
   - active_loop: survey
   - slot_was_set:
@@ -49,6 +49,127 @@ stories:
     - requested_slot: email
   - slot_was_set:
     - email: rana@gmail.com
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_thanking_for_responsing
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: survey
+  - active_loop: survey
+  - slot_was_set:
+    - requested_slot: recommend
+  - slot_was_set:
+    - recommend: '1'
+  - slot_was_set:
+    - requested_slot: management
+  - slot_was_set:
+    - management: '1'
+  - slot_was_set:
+    - requested_slot: strategy
+  - slot_was_set:
+    - strategy: '1'
+  - slot_was_set:
+    - requested_slot: development
+  - slot_was_set:
+    - development: '1'
+  - slot_was_set:
+    - requested_slot: mistakes
+  - slot_was_set:
+    - mistakes: '1'
+  - slot_was_set:
+    - requested_slot: daily_problems
+  - slot_was_set:
+    - daily_problems: '1'
+  - slot_was_set:
+    - requested_slot: treat
+  - slot_was_set:
+    - treat: '1'
+  - slot_was_set:
+    - requested_slot: satisfied
+  - slot_was_set:
+    - satisfied: '1'
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: rana
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: null
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: rana@gmail.com
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_thanking_for_responsing
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: survey
+  - active_loop: survey
+  - slot_was_set:
+    - requested_slot: recommend
+  - slot_was_set:
+    - recommend: '1'
+  - slot_was_set:
+    - requested_slot: management
+  - slot_was_set:
+    - management: '1'
+  - slot_was_set:
+    - requested_slot: strategy
+  - slot_was_set:
+    - strategy: '1'
+  - slot_was_set:
+    - requested_slot: development
+  - slot_was_set:
+    - development: '1'
+  - slot_was_set:
+    - requested_slot: mistakes
+  - slot_was_set:
+    - mistakes: '1'
+  - slot_was_set:
+    - requested_slot: daily_problems
+  - slot_was_set:
+    - daily_problems: '1'
+  - slot_was_set:
+    - requested_slot: treat
+  - slot_was_set:
+    - treat: '1'
+  - slot_was_set:
+    - requested_slot: satisfied
+  - slot_was_set:
+    - satisfied: '1'
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: rana
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: null
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: null
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: abdulrahman@gmail.com
   - slot_was_set:
     - requested_slot: null
   - active_loop: null

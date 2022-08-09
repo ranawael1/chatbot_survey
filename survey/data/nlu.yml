@@ -15,17 +15,11 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-- intent: feedback
-  examples: |
-    - I would love to share
-    - ok
-    - Ok
-    - Yes, sure
-    - yes
-    - sure
-    - okay
-    - k
-    - loven
+    - Hi
+    - Hii
+    - hiii
+    - hiiii
+    - Hello
 - intent: provide_name
   examples: |
     - Alexander
@@ -37,7 +31,8 @@ nlu:
     - alex
     - Ahmed
     - smith
-    - rana
+    - [rana](name)
+    - [rana](name)
 - intent: provide_email
   examples: |
     - [alex@gmail.com](email)
@@ -48,7 +43,40 @@ nlu:
     - my email is [ahmed@gmail.com](email)
     - [smith@gmail.com](email)
     - [rana@gmail.com](email)
-    - [rana@gmail.com](email)
+    - [cj@a.o](email)
+    - [aa@b.g](email)
+    - [cj@rr.ee](email)
+    - [caa@ek.y](email)
+    - [kf@.m](email)
+    - [j@qq.p](email)
+    - [raysna@s.](email)
+    - [zz.j](email)
+    - [x@s.v](email)
+    - [y@.](email)
+    - [jessy@gmail.com](email)
+    - [jane@gmail.com](email)
+    - [walter@yahoo.com](email)
+    - [will@gmail.com](email)
+    - my email is [will@gmail.com](email)
+    - this is my email [ahmed@gmail.com](email)
+    - this is my email [smith@gmail.com](email)
+    - here is my email [jessy@gmail.com](email)
+    - here is my email [alex@gmail.com](email)
+    - [rana@.](email)
+    - cj@a.o
+    - aa@b.g
+    - cj@rr.ee
+    - caa@ek.y
+    - kf@.m
+    - j@qq.p
+    - raysna@s.
+    - zz.j
+    - x@s.v
+    - y@.
+    - jessy@.
+    - [kareem@.](email)
+    - [abdulrahman@.](email)
+    - [abdulrahman@gmail.com](email)
 - intent: goodbye
   examples: |
     - good afternoon
@@ -62,11 +90,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
-    - 2
-    - 3
-    - 4
-    - 5
-    - 1
+
 - intent: affirm
   examples: |
     - yes
@@ -76,6 +100,16 @@ nlu:
     - that sounds good
     - correct
     - Undecided
+    - I would love 
+    - yes, I would
+    - ok
+    - Ok
+    - Yes, sure
+    - yes
+    - sure
+    - okay
+    - k
+    - love
 - intent: deny
   examples: |
     - no
@@ -85,43 +119,9 @@ nlu:
     - don't like that
     - no way
     - not really
-- intent: mood_great
+
+
+
+- regex: email
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-    - Very Likely
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-    - Somewhat Dissatisfied
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - ^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+

@@ -9,3 +9,12 @@ def agree_status(data):
         return None
 
 
+def choices(data, choices):
+    if data.isnumeric():
+        data = int(data)
+        if data >= 1 and data <= choices:
+            return data
+        else:
+            return None
+    else:
+        return None

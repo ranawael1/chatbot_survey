@@ -41,19 +41,19 @@ class ValidatePersonalDetailsForm(FormValidationAction):
         return "validate_survey"
     
 
-    # validate_[slot_name]
-    # def validate_recommend(
-    #     self,
-    #     slot_value: Any,
-    #     dispatcher: CollectingDispatcher,
-    #     tracker: Tracker,
-    #     domain: DomainDict,
-    # ) -> Dict[Text, Any]:
-    #     if slot_value >=1 or slot_value <=5 or slot_value.isdigit():
-    #         return {"recommend": slot_value}
-    #     else:
-    #         dispatcher.utter_message(text="Invalid input, please enter a valid input")
-    #         return {"recommend": None}
+    def validate_recommend(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        if validation.choices(slot_value, 3):
+            return {"recommend": slot_value}
+        else:
+            dispatcher.utter_message(text="Invalid input, please enter a valid input")
+            return {"recommend": None}
+    
     def validate_management(
         self,
         slot_value: Any,
@@ -131,18 +131,19 @@ class ValidatePersonalDetailsForm(FormValidationAction):
         else:
             dispatcher.utter_message(text="Invalid input, please enter a valid input")
             return {"treat": None}
-    # def validate_satisfied(
-    #     self,
-    #     slot_value: Any,
-    #     dispatcher: CollectingDispatcher,
-    #     tracker: Tracker,
-    #     domain: DomainDict,
-    # ) -> Dict[Text, Any]:
-    #     if slot_value >=1 or slot_value <=5 or slot_value.isdigit():
-    #         return {"satisfied": slot_value}
-    #     else:
-    #         dispatcher.utter_message(text="Invalid input, please enter a valid input")
-    #         return {"satisfied": None}
+    
+    def validate_satisfied(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        if validation.choices(slot_value, 5):
+            return {"satisfied": slot_value}
+        else:
+            dispatcher.utter_message(text="Invalid input, please enter a valid input")
+            return {"satisfied": None}
     def validate_email(
         self,
         slot_value: Any,

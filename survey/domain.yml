@@ -3,19 +3,20 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- mood_great
-- goodbye
-- affirm
-- greet
 - provide_email
 - provide_name
+- goodbye
+- greet
 - feedback
+- mood_great
+- affirm
 - mood_unhappy
 - response_feedback
 - deny
 - bot_challenge
 entities:
 - email
+- name
 slots:
   recommend:
     type: text
@@ -79,11 +80,11 @@ responses:
        How likely are you to recommend this organization to your family or friends? 
        
     buttons:
-    - payload: Very Likely
+    - payload: '1'
       title: Very Likely
-    - payload: Not Sure
+    - payload: '2'
       title: Not Sure
-    - payload: Very Unlikely
+    - payload: '3'
       title: Very Unlikely
   utter_ask_management:
   - text: |2-
@@ -183,15 +184,15 @@ responses:
   utter_ask_satisfied:
   - text: Lastly, overall, how satisfied are you with the job being done by your immediate supervisor?
     buttons:
-    - payload: Very Dissatisfied
+    - payload: '1'
       title: Very Dissatisfied
-    - payload: Somewhat Dissatisfied
+    - payload: '2'
       title: Somewhat Dissatisfied
-    - payload: Undecided
+    - payload: '3'
       title: Undecided
-    - payload: Somewhat Satisfied
+    - payload: '4'
       title: Somewhat Satisfied
-    - payload: Strongly Satisfied
+    - payload: '5'
       title: Strongly Satisfied
   utter_ask_name:
   - text: |-
@@ -218,7 +219,12 @@ responses:
       title: '4'
     - payload: '5'
       title: '5'
+  utter_please_rephrase:
+  - text: Sorry I can't understand you, please enter a valid input
+  utter_default:
+  - text: Sorry I can't understand you, please enter a valid input(from default)
 actions:
+- action_default_fallback
 - utter_ask_agree_or_not
 - utter_goodbye
 - utter_greet
