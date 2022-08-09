@@ -174,3 +174,10 @@ stories:
     - requested_slot: null
   - active_loop: null
   - action: utter_thanking_for_responsing
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_thanking_for_responsing

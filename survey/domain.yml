@@ -3,16 +3,16 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- deny
+- greet
 - provide_email
 - provide_name
 - goodbye
-- greet
 - feedback
 - mood_great
 - affirm
 - mood_unhappy
 - response_feedback
-- deny
 - bot_challenge
 entities:
 - email

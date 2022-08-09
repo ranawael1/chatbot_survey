@@ -32,7 +32,6 @@ nlu:
     - Ahmed
     - smith
     - [rana](name)
-    - [rana](name)
 - intent: provide_email
   examples: |
     - [alex@gmail.com](email)
@@ -90,7 +89,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -100,12 +98,11 @@ nlu:
     - that sounds good
     - correct
     - Undecided
-    - I would love 
+    - I would love
     - yes, I would
     - ok
     - Ok
     - Yes, sure
-    - yes
     - sure
     - okay
     - k
@@ -119,9 +116,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
-
-
 - regex: email
   examples: |
     - ^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
